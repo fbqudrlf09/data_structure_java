@@ -1,5 +1,11 @@
+import _02_SinglyLinkedList.SLinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        SLinkedList<Integer> list = new SLinkedList<>();
+
+        list.add(10);
+        list.set(0, 10);
     }
 }
