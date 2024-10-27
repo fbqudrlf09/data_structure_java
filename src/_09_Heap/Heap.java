@@ -131,7 +131,11 @@ public class Heap<E> {
     }
 
     private void siftDown(int idx, E target) {
-
+        if (comparator != null) {
+            siftDownComparator(idx, target, comparator);
+        } else {
+            siftDownComparable(idx, target);
+        }
     }
 
     @SuppressWarnings("unchecked")
