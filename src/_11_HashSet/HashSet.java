@@ -72,6 +72,7 @@ public class HashSet<E> implements Set<E> {
             for (int i = 0; i < table.length; i++) {
                 table[i] = null;
             }
+            size = 0;
         }
     }
 
