@@ -11,5 +11,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        String str1 = "0-42L";
+        String str2 = "0-43-";
+
+        System.out.println((str1.hashCode() == str2.hashCode()));	// true가 나온다.
     }
 }
