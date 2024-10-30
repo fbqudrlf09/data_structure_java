@@ -126,6 +126,8 @@ public class HashSet<E> implements Set<E> {
             while (value != null) {
                 int idx = value.hash % newCapacity;
 
+                nextNode = value.next;
+
                 if (newTable[idx] != null) {
                     Node<E> tail = newTable[idx];
 
@@ -133,12 +135,11 @@ public class HashSet<E> implements Set<E> {
                         tail = tail.next;
                     }
 
-                    nextNode = value.next;
+                    tail.next = value;
                     value.next = null;
                 } else {
-                    nextNode = value.next;
-                    value.next = null;
                     newTable[idx] = value;
+                    value.next = null;
                 }
 
                 value = nextNode;
